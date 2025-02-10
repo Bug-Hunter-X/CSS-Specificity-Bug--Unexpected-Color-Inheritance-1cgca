@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.special div {
+  color: red;
+}
+
+#id div {
+  color: green;
+}
+
+#id .special div {
+  color: purple;
+}
+```
+
+In this example, the last selector (`#id .special div`) has the highest specificity because it uses an ID selector, a class selector, and a type selector.  The color will be purple, as intended. However, unexpected behavior can arise when dealing with complex, nested selectors or a lot of inheritance, which can make it hard to trace.
